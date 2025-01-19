@@ -153,3 +153,14 @@ from tabulate import tabulate
 print(tabulate(out, headers=[i[0] for i in mycursor.description],showindex="always",tablefmt='psql'))
 
 
+#  First and last email date
+mycursor.execute("select Min(DATE(Date)) from Project2.user_history")
+out = mycursor.fetchall()
+from tabulate import tabulate
+print(tabulate(out, headers=[i[0] for i in mycursor.description],showindex="always",tablefmt='psql'))
+
+#  First and last email date
+mycursor.execute("select Max(DATE(Date)) from Project2.user_history")
+out = mycursor.fetchall()
+from tabulate import tabulate
+print(tabulate(out, headers=[i[0] for i in mycursor.description],showindex="always",tablefmt='psql'))
